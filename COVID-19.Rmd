@@ -1,0 +1,208 @@
+---
+title: "COVID-19 Analysis"
+author: "Adam Edwards"
+date: "March 2020"
+output:
+  tufte::tufte_html: default
+---
+```{r, echo=FALSE}
+knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE)
+options(scipen=5)
+```
+
+# COVID-19 Analysis
+
+```{r packages}
+if(!is.element("pacman",installed.packages()[,1])){install.packages("pacman")}
+if(!require(pacman)){library(pacman)}
+pacman::p_load(tidyverse, plotly, lubridate, ggthemes, RColorBrewer)
+```
+
+We can get the COVID-19 data from the Johns Hopkins school of engineering's center for systems science and engineering (CSSE) either by cloning into the repo or just loading it from the url. Another good source of data is the COVID Tracking Project at [https://covidtracking.com/][https://covidtracking.com/] and on Twitter at [@COVID19Tracking][https://twitter.com/COVID19Tracking].
+
+```{r data}
+path.local     <- "D:/Dropbox/_projects/COVID-19/"
+path.github    <- "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series"
+path.covid.api <- "https://covidtracking.com/api/"
+
+data.confirmed <- file.path(path.github, "time_series_covid19_confirmed_global.csv") %>% read_csv()
+data.deaths    <- file.path(path.github, "time_series_covid19_deaths_global.csv")    %>% read_csv()
+data.recovered <- file.path(path.github, "time_series_covid19_recovered_global.csv") %>% read_csv()
+data.world.pop <- file.path(path.local, "world_population.csv")                %>% read_csv()
+
+data.covid.states       <- file.path(path.covid.api,"states.csv")       %>% read_csv()
+data.covid.states.daily <- file.path(path.covid.api,"states/daily.csv") %>% read_csv()
+data.covid.usa          <- file.path(path.covid.api,"us.csv")           %>% read_csv()
+data.covid.usa.daily    <- file.path(path.covid.api,"us/daily.csv")     %>% read_csv()
+data.covid.counties     <- file.path(path.covid.api,"counties.csv")     %>% read_csv()
+
+vizpal <- brewer.pal(8, "Set1")   #color palette
+```
+
+```{r functions}
+accumulate_by <- function(data,  var) {
+  var <- lazyeval::f_eval(var, data)
+  lvls <- plotly:::getLevels(var)
+  dats <- lapply(seq_along(lvls), function(x){cbind.data.frame(data[var %in% lvls[seq(1,x)],],frame=lvls[[x]])})
+  dplyr::bind_rows(dats)
+}
+
+national_summary <- function(data, nation) {
+  t <- length(data)
+  
+  data[is.na(data)] <- 0
+  
+  output <- data %>%
+    filter(`Country/Region` == nation) %>%
+#    filter(Long > -150) %>%        # excludes alaska and hawaii
+#    filter(Long < -67) %>%         # excludes our other imperial conquests (guam, samoa, n mariana, puerto rico, virgin islands)
+    select(-`Country/Region`) %>%   # we don't need the nation column since we're restricting our analysis to just one country.
+    select(4:(t-1)) %>%
+    summarize_if(is.numeric, sum) %>%
+    pivot_longer(1:(t-4), names_to = "date", values_to = "cases") %>%
+    mutate(date = as.Date.character(date, format = "%m/%d/%y")) %>%
+    mutate(ID = row_number())
+  return(output)
+}
+
+predict_doom <- function(data, start, days.out = 7) {
+  t <- length(data$cases)
+  n <- length(data$cases[start:t])
+  covid.model <- glm(log(cases) ~ date, data = data, subset = c(start:t))
+  
+#  plot(cases ~ date, data = data, subset = c(start:t)) +
+#  lines(as.Date(seq(1, n, 1), origin = data$date[start]), exp(predict(covid.model)))
+  
+  scaley <- 10^(round(log(total.confirm$cases[length(total.confirm$cases)],10))+1)
+  
+  plot <- ggplot(data,aes(x=date,y=cases)) +
+    geom_point(color=vizpal[2],alpha=0.4,size=2) +
+    stat_smooth(method = "glm", method.args = list(family = gaussian(link = "log")), color=vizpal[2], fullrange=TRUE) +
+    labs(x = "Date", y = "COVID-19 Cases") +
+    scale_x_date(date_breaks = "7 days", date_labels = "%m/%d", limits = c(as.Date("2020-01-22"), as.Date(today()+days.out))) +
+    scale_y_continuous(breaks = seq.int(0, scaley, scaley/10), limits = c(0, scaley)) +
+    theme_tufte() +
+    theme(axis.text.x = element_text(angle = 90, hjust = 1))
+    
+  # what is it gonna look like in a week?
+  next.week       <- data.frame(date=as.Date(c(1:days.out), origin = data$date[t]))
+  cases.next.week <- covid.model %>%
+    predict(data.frame(date=next.week,cases=rep(mean(data$cases),days.out),ID=c(t:(t-1+days.out)))) %>%
+    exp()
+  
+  return(plot)
+}
+
+```
+
+Okay, we've loaded the data and filtered to focus on the United States. Let's just get a summary of confirmed cases. According to the AHA, in 2020 there were 924,107 staffed hospital beds in the United States.[^1]
+
+[^1]: https://www.aha.org/statistics/fast-facts-us-hospitals
+
+```{r clean data and summarize}
+nation <- "US"
+
+total.confirm <- national_summary(data.confirmed, nation)
+total.death   <- national_summary(data.deaths, nation)
+total.recover <- national_summary(data.recovered, nation)
+total.all     <- list(total.confirm, total.death, total.recover) %>% 
+  reduce(left_join, by="ID") %>%
+  select(starts_with("cases"),ID,date) %>%
+  rename(cases.confirm = cases.x) %>%
+  rename(cases.death = cases.y) %>%
+  rename(cases.recover = cases)
+
+frames <- total.all %>% accumulate_by(~ID)
+
+avg.hospital.rate <- mean(data.covid.usa.daily$hospitalized/data.covid.usa.daily$positive, na.rm=TRUE)*100
+avg.death.rate    <- mean(data.covid.usa.daily$death/data.covid.usa.daily$positive, na.rm=TRUE)*100
+
+summary(total.all)
+```
+
+```{r model}
+predict_doom(total.confirm,42,7)
+
+```
+
+```{r USA plot}
+
+plot <- ggplot(data = frames, aes(x = date, frame = frame)) +
+  geom_line(aes( y = cases.confirm), color=vizpal[2], size=1) +
+  geom_line(aes( y = cases.death), color=vizpal[1], size=1) +
+  geom_line(aes( y = cases.recover), color=vizpal[3], size=1) +
+  geom_point(aes( y = cases.confirm), color=vizpal[2], alpha=0.4, size=2) +
+  geom_point(aes( y = cases.death), color=vizpal[1], alpha=0.4, size=2) +
+  geom_point(aes( y = cases.recover), color=vizpal[3], alpha=0.4, size=2) +
+  scale_x_date(name = "Date", date_breaks = "7 days", date_labels = "%m/%d", limits = c(as.Date("2020-01-22"), as.Date(today()))) +
+  scale_y_continuous(name = "COVID-19 Cases", breaks = seq.int(0, 50000, 10000), limits = c(0, 50000)) +
+  theme_tufte() +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1))
+
+plot
+
+anim.plot <- ggplotly(plot) %>%
+  animation_opts(frame = 100,
+                 transition = 0,
+                 redraw = FALSE) %>%
+  animation_slider(currentvalue = list(prefix = "Day "))
+
+anim.plot
+```
+
+
+```{r all nations plot}
+nations <- c("US", "China", "Italy", "Germany")
+
+national_summary(data.confirmed, nations[3])$cases/data.world.pop$Population[which(data.world.pop$Country %in% "Italy")]
+
+plot <- ggplot(data = NULL, aes(x = date)) +
+  geom_line(data = national_summary(data.confirmed, nations[1]), aes(y = cases), size=1, color=vizpal[1]) +
+  geom_line(data = national_summary(data.confirmed, nations[2]), aes(y = cases), size=1, color=vizpal[2]) +
+  geom_line(data = national_summary(data.confirmed, nations[3]), aes(y = cases), size=1, color=vizpal[3]) +
+  geom_line(data = national_summary(data.confirmed, nations[4]), aes(y = cases), size=1, color=vizpal[4]) +
+  scale_x_date(name = "Date", date_breaks = "4 days", date_labels = "%m/%d", limits = c(as.Date("2020-01-22"), as.Date(today()))) +
+  scale_y_continuous(name = "COVID-19 Cases", breaks = seq.int(0, 100000, 10000), limits = c(0, 100000)) +
+  theme_tufte() +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1))
+
+plot
+
+plot <- ggplot(data = NULL, aes(x = date)) +
+  geom_line(data = national_summary(data.confirmed, nations[1]), aes(y = (cases/data.world.pop$Population[which(data.world.pop$Country %in% "United States")])*1000), size=1, color=vizpal[1]) +
+  geom_line(data = national_summary(data.confirmed, nations[2]), aes(y = (cases/data.world.pop$Population[which(data.world.pop$Country %in% nations[2])])*1000), size=1, color=vizpal[2]) +
+  geom_line(data = national_summary(data.confirmed, nations[3]), aes(y = (cases/data.world.pop$Population[which(data.world.pop$Country %in% nations[3])])*1000), size=1, color=vizpal[3]) +
+  geom_line(data = national_summary(data.confirmed, nations[4]), aes(y = (cases/data.world.pop$Population[which(data.world.pop$Country %in% nations[4])])*1000), size=1, color=vizpal[4]) +
+  scale_x_date(name = "Date", date_breaks = "4 days", date_labels = "%m/%d", limits = c(as.Date("2020-01-22"), as.Date(today()))) +
+  scale_y_continuous(name = "COVID-19 Cases", breaks = seq.int(0, 0.1, 0.01), limits = c(0, 0.1)) +
+  theme_tufte() +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1))
+
+plot
+
+```
+
+
+## Mapping the data
+
+```{r plots, fig.fullwidth=TRUE, fig.width=16, fig.height=12}
+pacman::p_load(maps, mapproj, geosphere, usmap, rgdal)
+
+states  <- map_data("state")
+nations <- map_data("world")
+
+covid.trans <- data.confirmed %>%
+  filter(`Country/Region` == "US") %>%
+  select(Long, Lat, `Province/State`, `Country/Region`, `1/22/20`:`3/25/20`) %>%
+  rename(state = `Province/State`)# %>%
+  usmap_transform()
+
+
+breaks = c(0, 50, 250, 1250, 6250)
+
+plot_usmap(data = covid.trans, color = "white", values = "X3.25.20") +
+  scale_fill_gradient(name = "X3.23.20", trans = "log", low = "#fff5f0", high = "#67000d", breaks = breaks, labels = breaks) +
+  theme_void() +
+  theme(panel.grid = element_blank())
+
+```

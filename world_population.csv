@@ -1,0 +1,243 @@
+Rank,Country,Population,% of world population,Date,Source
+1,China,1401841400,0.180,20-Mar-20,National population clock
+2,India,1360013641,0.175,20-Mar-20,National population clock
+3,United States,329482326,0.042,20-Mar-20,National population clock
+4,Indonesia,266911900,0.034,01-Jul-19,National annual projection
+5,Pakistan,219005520,0.028,20-Mar-20,2017 census
+6,Brazil,211279344,0.027,20-Mar-20,National population clock
+7,Nigeria,206139587,0.027,01-Jul-20,UN projection
+8,Bangladesh,168298782,0.022,20-Mar-20,National population clock
+9,Russia,146745098,0.019,01-Jan-20,National estimate
+10,Mexico,126577691,0.016,01-Jul-19,National annual projection
+11,Japan,126010000,0.016,01-Feb-20,Monthly provisional estimate
+12,Philippines,108429283,0.014,20-Mar-20,National population clock
+13,Egypt,100146158,0.013,20-Mar-20,National population clock
+14,Ethiopia,98665000,0.013,01-Jul-19,National annual projection
+15,Vietnam,96208984,0.012,01-Apr-19,Preliminary 2019 census result
+16,DR Congo,89561404,0.012,01-Jul-20,UN projection
+17,Iran,83295597,0.011,20-Mar-20,National population clock
+18,Turkey,83154997,0.011,31-Dec-19,National annual estimate
+19,Germany,83149300,0.011,30-Sep-19,National estimate
+20,France,67069000,0.009,01-Feb-20,Monthly national estimate
+21,Thailand,66483567,0.009,20-Mar-20,National population clock
+22,United Kingdom,66435600,0.009,30-Jun-18,National annual estimate
+23,Italy,60243406,0.008,31-Oct-19,Monthly national estimate
+24,South Africa,58775022,0.008,01-Jul-19,National annual estimate
+25,Tanzania,55890747,0.007,01-Jul-19,National annual projection
+26,Myanmar,54339766,0.007,01-Jul-19,National annual projection
+27,South Korea,51780579,0.007,01-Jul-20,National annual projection
+28,Colombia,49395678,0.006,30-Jun-19,National annual projection
+29,Kenya,47564296,0.006,31-Aug-19,2019 census result
+30,Spain,47100396,0.006,01-Jul-19,National estimate
+31,Argentina,44938712,0.006,01-Jul-19,National annual projection
+32,Algeria,43000000,0.006,01-Jan-19,National annual projection
+33,Sudan,42358885,0.005,20-Mar-20,National population clock
+34,Ukraine,41902416,0.005,01-Jan-20,Monthly national estimate
+35,Uganda,40299300,0.005,01-Jul-19,National annual projection
+36,Iraq,39127900,0.005,01-Jul-19,National annual projection
+37,Poland,38386000,0.005,30-Jun-19,National estimate
+38,Canada,37963887,0.005,20-Mar-20,National population clock
+39,Morocco,35844167,0.005,20-Mar-20,National population clock
+40,Saudi Arabia,34218169,0.004,01-Jul-19,National estimate
+41,Uzbekistan,34079570,0.004,20-Mar-20,National population clock
+42,Malaysia,32724760,0.004,20-Mar-20,National population clock
+43,Afghanistan,32225560,0.004,01-Jul-19,National annual estimate
+44,Venezuela,32219521,0.004,30-Jun-19,National annual projection
+45,Peru,32131400,0.004,30-Jun-19,National annual projection
+46,Angola,31127674,0.004,2020,National projection
+47,Ghana,30280811,0.004,01-Jul-19,National projection
+48,Mozambique,30066648,0.004,2020,National projection
+49,Yemen,29825968,0.004,01-Jul-20,UN projection
+50,Nepal,29609623,0.004,01-Jul-19,National annual projection
+51,Cameroon,26545864,0.003,01-Jul-20,UN projection
+52,Ivory Coast,25823071,0.003,01-Jul-19,National projection
+53,Madagascar,25680342,0.003,18-May-18,Provisional 2018 census result
+54,Australia,25651966,0.003,20-Mar-20,National population clock
+55,North Korea,25450000,0.003,01-Jul-19,National annual projection
+56,Taiwan,23604265,0.003,31-Jan-20,Monthly national estimate
+57,Niger,22314743,0.003,01-Jul-19,National annual projection
+58,Sri Lanka,21803000,0.003,01-Jul-19,National estimate
+59,Burkina Faso,20870060,0.003,01-Jul-19,National annual projection
+60,Mali,19973000,0.003,01-Jul-19,National annual projection
+61,Romania,19405156,0.003,01-Jan-19,National annual estimate
+62,Malawi,19129952,0.002,01-Jul-20,UN projection
+63,Chile,19107216,0.002,01-Jul-19,National annual projection
+64,Kazakhstan,18666464,0.002,20-Mar-20,National population clock
+65,Syria,17500657,0.002,01-Jul-20,UN projection
+66,Ecuador,17447936,0.002,20-Mar-20,National population clock
+67,Netherlands,17446481,0.002,20-Mar-20,National population clock
+68,Zambia,17381168,0.002,01-Jul-19,National annual projection
+69,Guatemala,16604026,0.002,01-Jul-19,National annual projection
+70,Senegal,16209125,0.002,01-Jul-19,National annual projection
+71,Somalia,15893219,0.002,01-Jul-20,UN projection
+72,Chad,15692969,0.002,01-Jul-19,National annual projection
+73,Cambodia,15288489,0.002,03-Mar-19,Provisional 2019 census result
+74,Zimbabwe,15159624,0.002,01-Jul-19,National annual projection
+75,South Sudan,12778250,0.002,01-Jul-19,National annual projection
+76,Rwanda,12374397,0.002,01-Jul-19,National projection annual
+77,Guinea,12218357,0.002,01-Jul-19,National projection
+78,Benin,11733059,0.002,01-Jul-19,National projection annual
+79,Tunisia,11722038,0.002,01-Jul-19,National estimate
+80,Haiti,11577779,0.001,01-Jul-19,National annual projection
+81,Belgium,11524454,0.001,01-Jan-20,Monthly national estimate
+82,Bolivia,11469896,0.001,01-Jul-19,National projection annual
+83,Cuba,11209628,0.001,31-Dec-18,National annual estimate
+84,Burundi,10953317,0.001,01-Jul-19,National annual projection
+85,Greece,10724599,0.001,01-Jan-19,National estimate
+86,Czech Republic,10681161,0.001,30-Sep-19,National quarterly estimate
+87,Jordan,10639984,0.001,20-Mar-20,National population clock
+88,Dominican Republic,10358320,0.001,01-Jul-19,National projection
+89,Sweden,10333456,0.001,31-Jan-20,National monthly estimate
+90,Portugal,10276617,0.001,31-Dec-18,National annual estimate
+91,Azerbaijan,10067108,0.001,01-Jan-20,National estimate
+92,United Arab Emirates,9890400,0.001,01-Jul-20,UN projection
+93,Hungary,9772756,0.001,01-Jan-19,National estimate
+94,Belarus,9413446,0.001,04-Oct-19,Preliminary 2019 census result
+95,Israel,9174150,0.001,20-Mar-20,National population clock
+96,Honduras,9158345,0.001,01-Jul-19,National annual projection
+97,Tajikistan,9127000,0.001,01-Jan-19,National estimate
+98,Papua New Guinea,8935000,0.001,2020,National annual projection
+99,Austria,8902600,0.001,01-Jan-20,Quarterly provisional figure
+100,Switzerland,8586550,0.001,30-Sep-19,National provisional figure
+101,Sierra Leone,7901454,0.001,01-Jul-19,National annual projection
+102,Togo,7538000,0.001,01-Jul-19,National annual projection
+103,Hong Kong (China),7500700,0.001,31-Dec-19,National estimate
+104,Paraguay,7152703,0.001,01-Jul-19,National annual projection
+105,Laos,7123205,0.001,01-Jul-19,National annual projection
+106,Bulgaria,7000039,0.001,31-Dec-18,National estimate
+107,Serbia,6963764,0.001,01-Jan-19,National annual estimate
+108,Libya,6871287,0.001,01-Jul-20,UN projection
+109,Lebanon,6825442,0.001,01-Jul-20,UN projection
+110,Kyrgyzstan,6523500,0.001,01-Jan-20,National estimate
+111,El Salvador,6486201,0.001,01-Jul-20,UN projection
+112,Nicaragua,6460411,0.001,30-Jun-18,National estimate
+113,Turkmenistan,6031187,0.001,01-Jul-20,UN projection
+114,Denmark,5822763,0.001,01-Jan-20,National quarterly estimate
+115,Singapore,5703600,0.001,30-Jun-19,National estimate
+116,Finland,5527573,0.001,31-Dec-19,National monthly estimate
+117,Congo,5518092,0.001,01-Jul-20,UN projection
+118,Central African Republic,5496011,0.001,01-Jul-19,National annual projection
+119,Slovakia,5456362,0.001,30-Sep-19,National estimate
+120,Norway,5367580,0.001,01-Jan-20,National quarterly estimate
+121,Costa Rica,5058007,0.001,30-Jun-19,National annual projection
+122,Palestine,4976684,0.001,01-Jul-19,National annual projection
+123,New Zealand,4971711,0.001,20-Mar-20,National population clock
+124,Ireland,4921500,0.001,01-Apr-19,National estimate
+125,Oman,4664790,0.001,01-Jan-20,National estimate
+126,Liberia,4475353,0.001,01-Jul-19,National projection
+127,Kuwait,4420110,0.001,01-Jan-19,National annual estimate
+128,Panama,4218808,0.001,01-Jul-19,National annual projection
+129,Mauritania,4077347,0.001,01-Jul-19,National annual projection
+130,Croatia,4076246,0.001,31-Dec-18,National annual estimate
+131,Georgia,3723464,0.000,01-Jan-19,National annual estimate
+132,Uruguay,3518552,0.000,30-Jun-19,National annual projection
+133,Eritrea,3497117,0.000,01-Jul-19,UN projection
+134,Mongolia,3308460,0.000,20-Mar-20,National population clock
+135,Bosnia and Herzegovina,3301000,0.000,01-Jul-19,UN projection
+136,Puerto Rico (US),3193694,0.000,01-Jul-19,National estimate
+137,Armenia,2957500,0.000,30-Sep-19,National quarterly estimate
+138,Albania,2862427,0.000,01-Jan-19,National annual estimate
+139,Lithuania,2793350,0.000,01-Feb-20,Monthly national estimate
+140,Qatar,2747282,0.000,30-Sep-19,Monthly national estimate
+141,Jamaica,2726667,0.000,31-Dec-18,National estimate
+142,Moldova,2681735,0.000,01-Jan-19,National estimate
+143,Namibia,2458936,0.000,01-Jul-19,National projection
+144,Gambia,2347706,0.000,01-Jul-19,UN projection
+145,Botswana,2338851,0.000,01-Jul-19,National annual projection
+146,Gabon,2172579,0.000,01-Jul-19,UN projection
+147,Slovenia,2094060,0.000,01-Oct-19,National estimate
+148,North Macedonia,2077132,0.000,31-Dec-18,National estimate
+149,Lesotho,2007201,0.000,10-Apr-16,2016 census result
+150,Latvia,1906800,0.000,01-Feb-20,Monthly national estimate
+151,Kosovo,1795666,0.000,31-Dec-18,National annual estimate
+152,Guinea-Bissau,1604528,0.000,01-Jul-19,National annual projection
+153,Bahrain,1543300,0.000,01-Jul-19,National annual projection
+154,East Timor,1387149,0.000,01-Jul-19,National annual projection
+155,Trinidad and Tobago,1363985,0.000,30-Jun-19,National estimate
+156,Equatorial Guinea,1358276,0.000,01-Jul-18,National estimate
+157,Estonia,1328360,0.000,01-Jan-20,National estimate
+158,Mauritius,1265985,0.000,01-Jul-19,National estimate
+159,Eswatini,1093238,0.000,11-May-17,National census result
+160,Djibouti,1078373,0.000,01-Jul-19,National annual projection
+161,Fiji,884887,0.000,17-Sep-17,National census result
+162,Cyprus,875900,0.000,31-Dec-18,National annual estimate
+163,Comoros,873724,0.000,01-Jul-19,National estimate
+164,Guyana,782766,0.000,01-Jul-19,UN projection
+165,Bhutan,741672,0.000,01-Jul-19,National annual projection
+166,Solomon Islands,680806,0.000,01-Jul-19,National annual projection
+167,Macau (China),679600,0.000,31-Dec-19,National quarterly estimate
+168,Montenegro,622359,0.000,01-Jan-18,National estimate
+169,Luxembourg,613894,0.000,01-Jan-19,National estimate
+170,Western Sahara,582463,0.000,01-Jul-19,UN projection
+171,Suriname,581372,0.000,01-Jul-19,UN projection
+172,Cape Verde,550483,0.000,01-Jul-19,National annual projection
+173,Malta,493559,0.000,31-Dec-18,National estimate
+174,Transnistria,469000,0.000,01-Jan-18,National estimate
+175,Brunei,442400,0.000,01-Jul-18,National estimate
+176,Belize,408487,0.000,01-Jul-19,National estimate
+177,Bahamas,385340,0.000,01-Jul-19,National annual projection
+178,Maldives,374775,0.000,31-Dec-18,National annual estimate
+179,Iceland,364260,0.000,31-Dec-19,National quarterly estimate
+180,Northern Cyprus,351965,0.000,31-Dec-17,National estimate
+181,Vanuatu,304500,0.000,01-Jul-18,National annual estimate
+182,Barbados,287025,0.000,01-Jul-19,UN projection
+183,New Caledonia (France),282200,0.000,01-Jan-18,National annual estimate
+184,French Polynesia (France),275918,0.000,17-Aug-17,2017 census results
+185,Abkhazia,244832,0.000,01-Jan-18,National estimate
+186,São Tomé and Príncipe,201784,0.000,01-Jul-18,National estimate
+187,Samoa,200874,0.000,01-Jul-19,National projection
+188,Saint Lucia,178696,0.000,01-Jul-18,National annual estimate
+189,Guam (US),172400,0.000,01-Jul-18,National annual estimate
+190,Curaçao (Netherlands),158665,0.000,01-Jan-19,National annual estimate
+191,Artsakh,148000,0.000,01-Jan-19,National annual estimate
+192,Kiribati,120100,0.000,01-Jul-18,National annual estimate
+193,Aruba (Netherlands),112309,0.000,31-Mar-19,National quarterly estimate
+194,Grenada,112003,0.000,01-Jul-19,UN projection
+195,Saint Vincent and the Grenadines,110608,0.000,01-Jul-19,National estimate
+196,Jersey (UK),106800,0.000,31-Dec-18,National estimate
+197,U.S. Virgin Islands (US),104578,0.000,01-Jul-19,UN projection
+198,F.S. Micronesia,104468,0.000,01-Jul-19,National annual projection
+199,Tonga,100651,0.000,30-Nov-16,2016 census result
+200,Seychelles,97625,0.000,30-Jun-19,National estimate
+201,Antigua and Barbuda,96453,0.000,01-Jul-19,National annual projection
+202,Isle of Man (UK),83314,0.000,24-Apr-16,2016 census result
+203,Andorra,77543,0.000,31-Dec-19,National estimate
+204,Dominica,71808,0.000,01-Jul-19,UN projection
+205,Cayman Islands (UK),65813,0.000,31-Dec-18,National estimate
+206,Bermuda (UK),64027,0.000,01-Jul-19,National annual projection
+207,Guernsey (UK),62792,0.000,31-Mar-19,National estimate
+208,American Samoa (US),56700,0.000,01-Jul-18,National annual estimate
+209,Greenland (Denmark),56081,0.000,01-Jan-20,National estimate
+210,Northern Mariana Islands (US),56200,0.000,01-Jul-18,National annual estimate
+211,Marshall Islands,55500,0.000,01-Jul-18,National annual estimate
+212,South Ossetia,53532,0.000,15-Oct-15,Preliminary 2015 census result
+213,Saint Kitts and Nevis,52823,0.000,01-Jul-19,UN projection
+214,Faroe Islands (Denmark),52124,0.000,01-Jan-20,Monthly national estimate
+215,Turks and Caicos Islands (UK),41369,0.000,01-Jul-18,National estimate
+216,Sint Maarten (Netherlands),40614,0.000,01-Jan-18,National estimate
+217,Liechtenstein,38749,0.000,31-Dec-19,National semi annual estimate
+218,Monaco,38300,0.000,31-Dec-18,National annual estimate
+219,Saint Martin (France),35746,0.000,01-Jan-16,National estimate
+220,Gibraltar (UK),33701,0.000,01-Jul-19,UN projection
+221,San Marino,33574,0.000,31-Dec-19,National monthly estimate
+222,British Virgin Islands (UK),30030,0.000,01-Jul-19,UN projection
+223,Åland Islands (Finland),29885,0.000,31-Jan-20,National annual estimate
+224,Palau,17900,0.000,01-Jul-18,National annual estimate
+225,Cook Islands (NZ),15200,0.000,01-Jul-18,National annual estimate
+226,Anguilla (UK),14869,0.000,01-Jul-19,UN projection
+227,Wallis and Futuna (France),11700,0.000,01-Jul-18,National annual estimate
+228,Nauru,11000,0.000,01-Jul-18,National annual estimate
+229,Tuvalu,10200,0.000,01-Jul-18,National annual estimate
+230,Saint Barthélemy (France),9793,0.000,01-Jan-16,National estimate
+231,Saint Pierre and Miquelon (France),6008,0.000,01-Jan-16,National estimate
+232,"Saint Helena, Ascensionand Tristan da Cunha (UK)",5633,0.000,07-Feb-16,2016 census result
+233,Montserrat (UK),4989,0.000,01-Jul-19,UN projection
+234,Falkland Islands (UK),3198,0.000,09-Oct-16,2016 census result
+235,Christmas Island (Australia),1928,0.000,30-Jun-18,National estimate
+236,Norfolk Island (Australia),1756,0.000,30-Jun-18,National estimate
+237,Niue (NZ),1520,0.000,01-Jul-18,National annual estimate
+238,Tokelau (NZ),1400,0.000,01-Jul-18,National annual estimate
+239,Vatican City,799,0.000,01-Jul-19,UN projection
+240,Cocos (Keeling) Islands (Australia),538,0.000,30-Jun-18,National estimate
+241,Pitcairn Islands (UK),50,0.000,01-Jan-19,National estimate
+242,World,7772832000,1.000,20-Mar-20,UN projection
